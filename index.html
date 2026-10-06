@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CORTEXUS | Physiotherapy Review</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7f9;
+    color:#1d2939;
+}
+
+.container{
+    max-width:700px;
+    margin:30px auto;
+    padding:20px;
+}
+
+.logo{
+    width:100%;
+    max-width:500px;
+    display:block;
+    margin:0 auto 20px;
+    border-radius:12px;
+}
+
+.thank{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.thank h2{
+    margin-bottom:8px;
+}
+
+.thank p{
+    color:#667085;
+    line-height:1.5;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.card{
+    background:#fff;
+    border:1px solid #e4e7ec;
+    border-radius:12px;
+    padding:14px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.card:hover{
+    border-color:#111827;
+}
+
+.card input{
+    margin-right:8px;
+}
+
+.btn{
+    width:100%;
+    border:0;
+    border-radius:10px;
+    padding:15px;
+    margin-top:18px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.generate{
+    background:#111827;
+    color:#fff;
+}
+
+.generate:hover{
+    background:#000;
+}
+
+textarea{
+    width:100%;
+    min-height:220px;
+    margin-top:20px;
+    padding:15px;
+    border:1px solid #d0d5dd;
+    border-radius:10px;
+    resize:vertical;
+    font-size:15px;
+    line-height:1.6;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+.reviewbtn{
+    background:#16803c;
+    color:#fff;
+}
+
+.reviewbtn:hover{
+    background:#116b31;
+}
+
+.note{
+    background:#fff8e6;
+    border:1px solid #f3d58a;
+    padding:12px;
+    border-radius:10px;
+    margin-top:15px;
+    font-size:13px;
+    line-height:1.5;
+}
+
+.footer{
+    text-align:center;
+    margin-top:25px;
+    font-size:13px;
+    color:#667085;
+}
+
+@media(max-width:550px){
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .container{
+        margin:10px auto;
+        padding:15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <img src="cortexus-banner.jpg" class="logo">
+
+    <div class="thank">
+        <h2>Thank You for Choosing CORTEXUS ❤️</h2>
+        <p>
+            Your feedback helps us improve our physiotherapy services
+            and helps others choose the right care.
+        </p>
+    </div>
+
+
+    <!-- SERVICES -->
+
+    <div class="grid">
+
+        <label class="card">
+            <input type="radio" name="service" value="Back Pain Treatment">
+            Back Pain Treatment
+        </label>
+
+        <label class="card">
+            <input type="radio" name="service" value="Neck Pain Treatment">
+            Neck Pain Treatment
+        </label>
+
+        <label class="card">
+            <input type="radio" name="service" value="Knee Pain Treatment">
+            Knee Pain Treatment
+        </label>
+
+        <label class="card">
+            <input type="radio" name="service" value="Sciatica Treatment">
+            Sciatica Treatment
+        </label>
+
+        <label class="card">
+            <input type="radio" name="service" value="Frozen Shoulder Treatment">
+            Frozen Shoulder Treatment
+        </label>
+
+        <label class="card">
+            <input type="radio" name="service" value="Stroke Rehabilitation">
+            Stroke Rehabilitation
+        </label>
+
+        <label class="card">
+            <input type="radio" name="service" value="Paralysis Rehabilitation">
+            Paralysis Rehabilitation
+        </label>
+
+        <label class="card">
+            <input type="radio" name="service" value="Post Surgery Rehabilitation">
+            Post Surgery Rehabilitation
+        </label>
+
+        <label class="card">
+            <input type="radio" name="service" value="Neurological Physiotherapy">
+            Neurological Physiotherapy
+        </label>
+
+        <label class="card">
+            <input type="radio" name="service" value="Orthopedic Physiotherapy">
+            Orthopedic Physiotherapy
+        </label>
+
+        <label class="card">
+            <input type="radio" name="service" value="Sports Injury Rehabilitation">
+            Sports Injury Rehabilitation
+        </label>
+
+        <label class="card">
+            <input type="radio" name="service" value="Elderly Care Physiotherapy">
+            Elderly Care Physiotherapy
+        </label>
+
+    </div>
+
+
+    <button type="button" class="btn generate" onclick="generateReview()">
+        GENERATE REVIEW
+    </button>
+
+
+    <textarea
+        id="review"
+        placeholder="Your review draft will appear here..."
+    ></textarea>
+
+
+    <button
+        type="button"
+        class="btn reviewbtn"
+        onclick="copyAndOpen()"
+    >
+        COPY REVIEW & OPEN GOOGLE REVIEW
+    </button>
+
+
+    <div class="note">
+        <strong>Note:</strong>
+        Please edit the draft with your actual experience before posting.
+        Add your real improvement, therapist experience, or specific thing
+        that you genuinely liked about the treatment.
+    </div>
+
+
+    <div class="footer">
+        CORTEXUS - Rehab • Recovery • Performance<br>
+        Rebuilding Movement. Restoring Life.
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   REVIEW DATA
+========================= */
+
+var reviewData = {
+
+    "Back Pain Treatment": [
+        "I visited CORTEXUS for back pain treatment. The sessions were explained clearly and the exercises were easy to understand. [Add your actual improvement here]. Overall, I had a good experience with the physiotherapy care.",
+        "I had been dealing with back discomfort and decided to try physiotherapy at CORTEXUS. The treatment was systematic and the exercises were explained properly. [Mention your genuine result]. I would recommend CORTEXUS to someone looking for physiotherapy.",
+        "My experience with CORTEXUS for back pain was positive. I especially liked the way the treatment and exercises were explained instead of simply doing the exercises without understanding them. [Add your real experience]."
+    ],
+
+    "Neck Pain Treatment": [
+        "I consulted CORTEXUS for neck pain and found the overall physiotherapy experience very good. The treatment was explained properly and I was guided through the exercises. [Add your genuine improvement here].",
+        "Good experience with CORTEXUS for my neck problem. The sessions were well explained and the exercises were taught according to my condition. [Mention what actually improved for you].",
+        "I was looking for physiotherapy for neck pain and chose CORTEXUS. The approach was professional and easy to understand. [Add your real experience/result]."
+    ],
+
+    "Knee Pain Treatment": [
+        "I took physiotherapy for my knee problem at CORTEXUS. The exercises were explained properly and the treatment was adjusted according to my condition. [Add your actual improvement]. Overall, a good experience.",
+        "My experience with CORTEXUS for knee pain has been good. I was guided about exercises and movement rather than just relying on machines. [Mention your genuine result].",
+        "I visited CORTEXUS for knee pain and found the treatment approach helpful. The exercises were explained clearly and I felt properly guided throughout the sessions. [Add your real experience]."
+    ],
+
+    "Sciatica Treatment": [
+        "I consulted CORTEXUS for sciatica-related symptoms. The treatment and exercises were explained clearly and I was guided according to my condition. [Add your actual improvement]. Good overall experience.",
+        "My experience with CORTEXUS for sciatica was positive. I appreciated the proper explanation of exercises and the step-by-step approach. [Mention your genuine result].",
+        "I took physiotherapy at CORTEXUS for my sciatica problem. The sessions were professional and easy to understand. [Add what actually changed for you]."
+    ],
+
+    "Frozen Shoulder Treatment": [
+        "I visited CORTEXUS for frozen shoulder physiotherapy. The exercises were explained patiently and the treatment was progressed according to my condition. [Add your actual improvement].",
+        "Good physiotherapy experience for my frozen shoulder at CORTEXUS. I was taught how to work on shoulder movement safely and progressively. [Mention your genuine result].",
+        "CORTEXUS provided a structured approach for my shoulder problem. The exercises were explained clearly and I felt properly guided during the sessions. [Add your real experience]."
+    ],
+
+    "Stroke Rehabilitation": [
+        "I contacted CORTEXUS for stroke rehabilitation. The sessions focused on movement, exercises and functional recovery according to the patient's condition. [Add your actual experience/progress].",
+        "Our experience with CORTEXUS for stroke rehabilitation has been positive. The exercises were explained properly and the treatment was approached step by step. [Mention the genuine progress you observed].",
+        "We took physiotherapy support from CORTEXUS for stroke rehabilitation. The therapist provided guidance regarding movement and exercises and explained things clearly. [Add your real experience]."
+    ],
+
+    "Paralysis Rehabilitation": [
+        "I approached CORTEXUS for paralysis rehabilitation. The treatment was explained clearly and exercises were introduced according to the patient's ability. [Add your actual experience].",
+        "Good experience with CORTEXUS for paralysis rehabilitation. The sessions were focused on movement and functional improvement with proper guidance. [Mention your genuine progress].",
+        "CORTEXUS provided a structured physiotherapy approach for our paralysis rehabilitation needs. The exercises were explained properly and the sessions were handled professionally. [Add your real experience]."
+    ],
+
+    "Post Surgery Rehabilitation": [
+        "I took physiotherapy from CORTEXUS after surgery. The rehabilitation exercises were explained clearly and progressed according to my condition. [Add your actual improvement].",
+        "My post-surgery physiotherapy experience at CORTEXUS was good. I was guided step by step regarding exercises and movement. [Mention your genuine result].",
+        "I consulted CORTEXUS for rehabilitation after surgery. The treatment plan was explained properly and I felt guided throughout the recovery process. [Add your actual experience]."
+    ],
+
+    "Neurological Physiotherapy": [
+        "I consulted CORTEXUS for neurological physiotherapy. The sessions were structured according to the patient's condition and the exercises were explained clearly. [Add your genuine experience].",
+        "Good experience with CORTEXUS for neurological rehabilitation. The treatment was approached step by step and the exercises were properly demonstrated. [Mention your actual progress].",
+        "We took neurological physiotherapy from CORTEXUS and found the approach professional and easy to understand. [Add your real experience/result]."
+    ],
+
+    "Orthopedic Physiotherapy": [
+        "I consulted CORTEXUS for an orthopedic problem and had a good physiotherapy experience. The exercises and treatment were explained clearly. [Add your actual improvement].",
+        "My experience with CORTEXUS for orthopedic physiotherapy was positive. The treatment was systematic and I was guided properly throughout the sessions. [Mention your genuine result].",
+        "I visited CORTEXUS for orthopedic physiotherapy. The therapist explained the exercises properly and focused on improving movement and function. [Add your real experience]."
+    ],
+
+    "Sports Injury Rehabilitation": [
+        "I took physiotherapy at CORTEXUS for a sports-related injury. The rehabilitation was explained step by step and exercises were progressed according to my condition. [Add your actual improvement].",
+        "Good experience with CORTEXUS for sports injury rehabilitation. I was guided regarding exercises, movement and gradual recovery. [Mention your genuine result].",
+        "CORTEXUS provided a structured approach for my sports injury recovery. The exercises were explained clearly and the rehabilitation was progressive. [Add your real experience]."
+    ],
+
+    "Elderly Care Physiotherapy": [
+        "We took physiotherapy support from CORTEXUS for an elderly family member. The exercises were explained patiently and according to the person's ability. [Add your actual experience].",
+        "Good experience with CORTEXUS for elderly physiotherapy care. The sessions were handled patiently and the exercises were explained in an easy way. [Mention your genuine result].",
+        "CORTEXUS provided physiotherapy care for our elderly family member. We appreciated the patient and structured approach. [Add your actual experience/progress]."
+    ]
+
+};
+
+
+/* =========================
+   RANDOM PICK
+========================= */
+
+function pickRandom(array){
+
+    if(!array || array.length === 0){
+        return "";
+    }
+
+    return array[Math.floor(Math.random() * array.length)];
+}
+
+
+/* =========================
+   GENERATE REVIEW
+========================= */
+
+function generateReview(){
+
+    var selected = document.querySelector(
+        'input[name="service"]:checked'
+    );
+
+    var reviewBox = document.getElementById("review");
+
+    if(!selected){
+
+        alert("Please select a physiotherapy service first.");
+
+        return;
+    }
+
+    var service = selected.value;
+
+    var options = reviewData[service];
+
+    if(!options){
+
+        reviewBox.value =
+            "Please write your genuine experience with CORTEXUS for " +
+            service + ".";
+
+        return;
+    }
+
+    var review = pickRandom(options);
+
+    reviewBox.value = review;
+
+    /* Move screen to review box */
+    reviewBox.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+    /* Select text so it is easy to edit */
+    reviewBox.focus();
+}
+
+
+/* =========================
+   COPY + OPEN GOOGLE
+========================= */
+
+function copyAndOpen(){
+
+    var reviewBox = document.getElementById("review");
+
+    var text = reviewBox.value.trim();
+
+    if(!text){
+
+        alert("Please generate a review first.");
+
+        return;
+    }
+
+    /*
+       Copy review
+    */
+
+    if(navigator.clipboard){
+
+        navigator.clipboard.writeText(text)
+        .then(function(){
+
+            alert(
+                "Review copied. Please paste it on Google and edit it with your actual experience."
+            );
+
+            window.open(
+                "https://g.page/r/CRDpyce9iCusEBM/review",
+                "_blank"
+            );
+
+        })
+        .catch(function(){
+
+            fallbackCopy(text);
+
+        });
+
+    }else{
+
+        fallbackCopy(text);
+
+    }
+
+}
+
+
+/* =========================
+   FALLBACK COPY
+========================= */
+
+function fallbackCopy(text){
+
+    var temp = document.createElement("textarea");
+
+    temp.value = text;
+
+    document.body.appendChild(temp);
+
+    temp.select();
+
+    try{
+
+        document.execCommand("copy");
+
+        alert(
+            "Review copied. Please paste it on Google and edit it with your actual experience."
+        );
+
+    }catch(error){
+
+        alert(
+            "Please manually copy the review from the box."
+        );
+
+    }
+
+    document.body.removeChild(temp);
+
+    window.open(
+        "https://g.page/r/CRDpyce9iCusEBM/review",
+        "_blank"
+    );
+}
+
+</script>
+
+</body>
+</html>
